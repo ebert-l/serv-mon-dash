@@ -11,3 +11,11 @@ So sollen z.B. die aktuelle CPU-Auslastung, die aktuelle RAM-Auslastung und der 
 Sollte das Projekt im erklärten Umfang noch nicht ausreichend sein, könnte es durch folgende Erweiterungen ergänzt werden, wenn im Vorfeld explizit danach verlangt wird:
 - REST-API mit JSON Ausgabe der aktuellen Vitaldaten
 - Speichern von historischen Vitaldaten in lokaler PostgreSQL inkl. grafischer Darstellung im Dashboard
+
+# Handling
+## Vorab nötig
+`pip install django`
+`pip install python-dotenv`
+
+## Bauen der Anwendung
+`py manage.py runserver`
