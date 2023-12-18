@@ -1,2 +1,4 @@
+.gitignore
 servmon/__pycache__/
 .env
+shortcuts.md
