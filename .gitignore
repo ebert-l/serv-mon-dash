@@ -1,4 +1,6 @@
 .gitignore
 servmon/__pycache__/
+dashboard/__pycache__/
+migrations/__pycache__/
 .env
 shortcuts.md
