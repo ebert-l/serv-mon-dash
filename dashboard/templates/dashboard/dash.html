@@ -3,5 +3,14 @@
 {% block content %}
 {% with i=15 %}
 <h1>Test Input {{ i }}</h1>
+
+<h1>Systeminformationen</h1>
+<p>CPU-Auslastung: {{ cpu_percent }}%</p>
+<!-- <p> CPU-Laufzeit: {{ cpu_time }}min </p> -->
+<p>Speicherplatz: {{ memory }}GB, davon frei: {{ memory_free }}GB </p>
+<p>Disk-Usage: {{ disk_usage }}GB davon frei: {{ disk_free }}GB</p>
+<p>RAM-Auslastung: {{ ram_info.percent }}%</p>
+<p>Drives Usage: {{ drives_usage }}</p>
+<p>Drives Usage: {{ top_processes }}</p>
 {% endwith %}
 {% endblock %}
