@@ -16,6 +16,7 @@ Sollte das Projekt im erklärten Umfang noch nicht ausreichend sein, könnte es 
 ## Vorab nötig
 `pip install django`
 `pip install python-dotenv`
+`pip install psutil`
 
 ## Bauen der Anwendung
 `py manage.py runserver`

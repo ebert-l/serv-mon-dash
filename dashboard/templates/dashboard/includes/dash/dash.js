@@ -41,10 +41,7 @@ function handleJSON(json){
     volumes_panel.querySelectorAll(".h5")[0].innerHTML = `${volumesArray.join(", ")}`;
 
     let tasks_panel = document.getElementById("Tasks");
-    // Todo: Ersetzen durch Anzahl Tasks
-    tasks_panel.querySelectorAll(".h5")[0].innerText = `${json.memory_free}`;
-
-
+    tasks_panel.querySelectorAll(".h5")[0].innerText = `${json.process_count}`;
 
     setTimeout(fetchFromAPI, 500);
 }
