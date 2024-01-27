@@ -72,7 +72,9 @@ def data(resp):
     for proc in psutil.process_iter(['pid']):
         p = psutil.Process(pid=proc.pid)
         processes.append(p.as_dict(attrs=['pid', 'name', 'username', 'cpu_percent', 'memory_percent']))
-    top_processes = sorted(processes, key=lambda i: i['memory_percent'], reverse=True)[:5]
+    top_processes_cpu = sorted(processes, key=lambda i: i['cpu_percent'], reverse=True)[:5]
+    top_processes_memory = sorted(processes, key=lambda i: i['memory_percent'], reverse=True)[:5]
+    process_count = len(processes)
 
 
     json_resp = {
@@ -85,7 +87,10 @@ def data(resp):
         'disk_free' : disk_free,
         'ram_info': ram_info,
         'drives_usage': drives_usage,
-        'top_processes': top_processes
+        'top_processes_cpu': top_processes_cpu,
+        'top_processes_memory': top_processes_memory,
+        'process_count' : process_count
+
     }
 
     return JsonResponse(json_resp)
