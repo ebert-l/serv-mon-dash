@@ -1,0 +1,11 @@
+<!-- Project Card Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Festplatten</h6>
+    </div>
+    <div class="card-body">
+    {% for volume in drives_usage %}
+        {% include "dashboard/includes/dash/volumesProgress.html" with volume_name=volume.name volume_free=volume.free volume_total=volume.total %}
+    {% endfor %}
+    </div>
+</div>

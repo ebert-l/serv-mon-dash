@@ -1,0 +1,5 @@
+<h4 class="small font-weight-bold">{{volume_name}} ({{volume_total}} GB)<span
+    class="float-right">{{volume_level}}</span></h4>
+<div class="progress mb-4">
+<div class="progress-bar" role="progressbar" style="width: calc( 100% * calc(1 - ({{volume_free}} / {{volume_total}})));"></div>
+</div>
