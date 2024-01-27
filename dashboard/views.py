@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render
 from django.http import JsonResponse
 import psutil, os
@@ -53,3 +54,6 @@ def gatherSystemInformation():
         'top_processes': top_processes
     }
     return json_resp
+=======
+Accepted Merge
+>>>>>>> alicia
