@@ -11,7 +11,6 @@ fetchFromAPI();
 
 function handleJSON(json){
     // write to cpu percent
-    console.log(json);
     let cpu_panel = document.getElementById("CPU-Auslastung");
     let cpuValue = json.cpu_percent.toLocaleString('de-DE', {
         minimumFractionDigits: 1,
@@ -42,6 +41,40 @@ function handleJSON(json){
 
     let tasks_panel = document.getElementById("Tasks");
     tasks_panel.querySelectorAll(".h5")[0].innerText = `${json.process_count}`;
+
+    let topProcCPU = document.getElementById("cpuTable");
+    for (let i = 0; i < topProcCPU.children.length; i++){
+      let row = topProcCPU.children[i];
+      let procName = `${json.top_processes_cpu[i].name}`;
+      let procCPU = json.top_processes_cpu[i].cpu_percent.toLocaleString('de-DE', {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1
+      });
+      let procRAM = json.top_processes_cpu[i].memory_percent.toLocaleString('de-DE', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+      row.children[0].innerText = procName;
+      row.children[1].innerText = `${procCPU}%`;
+      row.children[2].innerText = `${procRAM}%`;
+    }
+
+    let topProcRAM = document.getElementById("ramTable");
+    for (let i = 0; i < topProcRAM.children.length; i++){
+      let row = topProcRAM.children[i];
+      let procName = `${json.top_processes_memory[i].name}`;
+      let procCPU = json.top_processes_memory[i].cpu_percent.toLocaleString('de-DE', {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1
+      });
+      let procRAM = json.top_processes_memory[i].memory_percent.toLocaleString('de-DE', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+      row.children[0].innerText = procName;
+      row.children[1].innerText = `${procCPU}%`;
+      row.children[2].innerText = `${procRAM}%`;
+    }
 
     setTimeout(fetchFromAPI, 500);
 }
